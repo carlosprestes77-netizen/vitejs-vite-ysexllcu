@@ -1,5 +1,5 @@
 import { useScroll } from 'framer-motion';
-import MonolithScene from './components/MonolithScene';
+import StatueScene from './components/StatueScene';
 import CinematicOverlay from './components/CinematicOverlay';
 import CinematicIntro from './components/CinematicIntro';
 import Cursor from './components/Cursor';
@@ -25,8 +25,8 @@ export default function App() {
       {/* custom art cursor */}
       <Cursor />
 
-      {/* living 3D backdrop — the rotating monolith */}
-      <MonolithScene scroll={scrollYProgress} />
+      {/* living 3D backdrop — rotating marble specimens */}
+      <StatueScene scroll={scrollYProgress} />
 
       {/* global cinematic grade, leak, scanlines, letterbox + HUD */}
       <CinematicOverlay />

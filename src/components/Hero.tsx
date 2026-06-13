@@ -24,9 +24,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 1 }}
-          className="mb-4 font-mono text-xs uppercase tracking-[0.5em] text-blood"
+          className="mb-4 font-mono text-xs uppercase tracking-[0.5em] text-gold"
         >
-          ⊹ Tatuagem como obra viva ⊹
+          ⊹ Atelier de tatuagem neoclássica ⊹
         </motion.p>
 
         <motion.h1
@@ -36,7 +36,7 @@ export default function Hero() {
           className="font-display text-[18vw] font-black leading-[0.82] tracking-tight text-bone sm:text-[15vw] lg:text-[11rem]"
         >
           <span className="block text-stroke">A PELE</span>
-          <span className="block italic">é tela</span>
+          <span className="block italic">é mármore</span>
         </motion.h1>
 
         <motion.p
@@ -45,8 +45,8 @@ export default function Hero() {
           transition={{ delay: 1.1, duration: 1 }}
           className="mt-8 max-w-md text-balance font-sans text-sm font-light leading-relaxed text-bone-dim"
         >
-          Linhas que respiram, sombras com profundidade, geometria sagrada.
-          Cada peça é única — desenhada para o corpo que a carrega.
+          Proporção clássica, o gesto greco-romano, a linha que atravessa
+          séculos. Esculpimos sobre o corpo aquilo que o tempo respeita.
         </motion.p>
       </div>
 
@@ -58,7 +58,7 @@ export default function Hero() {
         className="flex items-end justify-between"
       >
         <div className="hidden font-mono text-[10px] uppercase tracking-[0.3em] text-bone-faint sm:block">
-          <span className="text-gold">↻</span> role para girar o monolito
+          <span className="text-gold">↻</span> role para girar a escultura
         </div>
 
         <div className="mx-auto flex flex-col items-center gap-2 sm:mx-0">

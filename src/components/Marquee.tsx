@@ -1,12 +1,12 @@
 const WORDS = [
-  'BLACKWORK',
   'FINE LINE',
-  'DOTWORK',
-  'GEOMÉTRICO',
   'ORNAMENTAL',
-  'REALISMO',
-  'NEOTRAD',
-  'LETTERING',
+  'BLACKWORK',
+  'GREGA · MEANDRO',
+  'LOURO',
+  'BAIXO-RELEVO',
+  'FIGURATIVO',
+  'CLÁSSICO',
 ];
 
 export default function Marquee() {
@@ -20,7 +20,7 @@ export default function Marquee() {
             className="flex items-center gap-10 font-display text-2xl font-bold italic tracking-wide text-bone-dim"
           >
             {w}
-            <span className="text-blood not-italic">✦</span>
+            <span className="text-gold not-italic">✦</span>
           </span>
         ))}
       </div>
