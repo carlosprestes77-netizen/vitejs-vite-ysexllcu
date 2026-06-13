@@ -1,6 +1,13 @@
 import { useRef, useMemo, useEffect, Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { RoundedBox, Edges, Stars, Float } from '@react-three/drei';
+import {
+  EffectComposer,
+  Bloom,
+  ChromaticAberration,
+  Vignette,
+} from '@react-three/postprocessing';
+import { BlendFunction } from 'postprocessing';
 import * as THREE from 'three';
 import type { MotionValue } from 'framer-motion';
 import { createInkTexture } from '../lib/inkTexture';
@@ -71,7 +78,7 @@ function Monolith({
             roughness={0.35}
             emissive="#e0913a"
             emissiveMap={ink}
-            emissiveIntensity={1.6}
+            emissiveIntensity={2.4}
             bumpMap={ink}
             bumpScale={0.04}
           />
@@ -211,6 +218,24 @@ export default function MonolithScene({ scroll }: SceneProps) {
           speed={0.6}
         />
         <Rig />
+
+        {/* cinematic lens pass: glowing engravings + RGB fringe + vignette */}
+        <EffectComposer multisampling={4}>
+          <Bloom
+            intensity={1.15}
+            luminanceThreshold={0.22}
+            luminanceSmoothing={0.9}
+            mipmapBlur
+            radius={0.8}
+          />
+          <ChromaticAberration
+            offset={new THREE.Vector2(0.0008, 0.0008)}
+            radialModulation
+            modulationOffset={0.4}
+            blendFunction={BlendFunction.NORMAL}
+          />
+          <Vignette eskil={false} offset={0.25} darkness={0.55} />
+        </EffectComposer>
       </Canvas>
     </div>
   );
