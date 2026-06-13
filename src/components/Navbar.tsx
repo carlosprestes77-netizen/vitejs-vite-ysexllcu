@@ -33,7 +33,7 @@ export default function Navbar() {
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="group flex items-center gap-3"
         >
-          <span className="block h-2 w-2 rotate-45 bg-blood transition-transform duration-500 group-hover:rotate-[225deg]" />
+          <span className="block h-2 w-2 rotate-45 bg-gold transition-transform duration-500 group-hover:rotate-[225deg]" />
           <span className="font-display text-xl font-black tracking-[0.3em] text-bone">
             OBSIDIAN
           </span>
@@ -44,7 +44,7 @@ export default function Navbar() {
             <li key={l.id}>
               <button
                 onClick={() => go(l.id)}
-                className="font-mono text-[11px] uppercase tracking-[0.25em] text-bone-dim transition-colors hover:text-blood"
+                className="font-mono text-[11px] uppercase tracking-[0.25em] text-bone-dim transition-colors hover:text-gold"
               >
                 {l.label}
               </button>
@@ -54,7 +54,7 @@ export default function Navbar() {
 
         <button
           onClick={() => go('agendar')}
-          className="border border-bone/20 px-5 py-2 font-mono text-[11px] uppercase tracking-[0.25em] text-bone transition-all hover:border-blood hover:bg-blood/10 hover:text-blood"
+          className="border border-bone/20 px-5 py-2 font-mono text-[11px] uppercase tracking-[0.25em] text-bone transition-all hover:border-gold hover:bg-gold/10 hover:text-gold"
         >
           Reservar →
         </button>

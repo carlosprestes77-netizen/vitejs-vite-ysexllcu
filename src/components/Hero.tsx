@@ -4,74 +4,41 @@ export default function Hero() {
   return (
     <section
       id="topo"
-      className="relative z-10 flex min-h-screen flex-col justify-between px-6 pb-10 pt-28 lg:px-10"
+      className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 text-center"
     >
-      {/* top status line */}
-      <motion.div
+      <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.4, duration: 1 }}
-        className="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.3em] text-bone-faint"
+        transition={{ delay: 0.3, duration: 1.4 }}
+        className="mb-8 font-mono text-[10px] uppercase tracking-[0.5em] text-gold/80"
       >
-        <span>23°33′S 46°38′W</span>
-        <span className="hidden sm:block">Estúdio Autoral · Hora Marcada</span>
-        <span>Est. MMXIV</span>
-      </motion.div>
+        Atelier de tatuagem
+      </motion.p>
 
-      {/* center headline framing the monolith */}
-      <div className="pointer-events-none relative flex flex-1 flex-col items-center justify-center text-center">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 1 }}
-          className="mb-4 font-mono text-xs uppercase tracking-[0.5em] text-gold"
-        >
-          ⊹ Atelier de tatuagem neoclássica ⊹
-        </motion.p>
+      <motion.h1
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 1.3, ease: [0.16, 1, 0.3, 1] }}
+        className="font-display text-[15vw] font-light italic leading-[0.85] tracking-tight text-bone sm:text-[12vw] lg:text-[9rem]"
+      >
+        Obsidian
+      </motion.h1>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-          className="font-display text-[18vw] font-black leading-[0.82] tracking-tight text-bone sm:text-[15vw] lg:text-[11rem]"
-        >
-          <span className="block text-stroke">A PELE</span>
-          <span className="block italic">é mármore</span>
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.1, duration: 1 }}
-          className="mt-8 max-w-md text-balance font-sans text-sm font-light leading-relaxed text-bone-dim"
-        >
-          Proporção clássica, o gesto greco-romano, a linha que atravessa
-          séculos. Esculpimos sobre o corpo aquilo que o tempo respeita.
-        </motion.p>
-      </div>
-
-      {/* bottom row */}
-      <motion.div
+      <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.3, duration: 1 }}
-        className="flex items-end justify-between"
+        transition={{ delay: 1, duration: 1.4 }}
+        className="mt-8 max-w-sm text-balance font-sans text-sm font-light leading-relaxed text-bone-dim"
       >
-        <div className="hidden font-mono text-[10px] uppercase tracking-[0.3em] text-bone-faint sm:block">
-          <span className="text-gold">↻</span> role para girar a escultura
-        </div>
+        A pele como mármore. A linha como escultura.
+      </motion.p>
 
-        <div className="mx-auto flex flex-col items-center gap-2 sm:mx-0">
-          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-bone-dim">
-            scroll
-          </span>
-          <span className="block h-12 w-px animate-pulse-soft bg-gradient-to-b from-bone to-transparent" />
-        </div>
-
-        <div className="hidden font-mono text-[10px] uppercase tracking-[0.3em] text-bone-faint sm:block">
-          01 / 05
-        </div>
-      </motion.div>
+      <motion.span
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.6, duration: 1.4 }}
+        className="absolute bottom-10 left-1/2 block h-14 w-px -translate-x-1/2 animate-pulse-soft bg-gradient-to-b from-bone/50 to-transparent"
+      />
     </section>
   );
 }

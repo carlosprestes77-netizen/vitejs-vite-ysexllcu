@@ -1,11 +1,11 @@
 import { useScroll } from 'framer-motion';
-import StatueScene from './components/StatueScene';
+import { useSmoothScroll } from './hooks/useSmoothScroll';
+import BustScene from './components/BustScene';
 import CinematicOverlay from './components/CinematicOverlay';
 import CinematicIntro from './components/CinematicIntro';
 import Cursor from './components/Cursor';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Marquee from './components/Marquee';
 import Manifesto from './components/Manifesto';
 import Gallery from './components/Gallery';
 import Studio from './components/Studio';
@@ -14,28 +14,25 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 export default function App() {
-  // Drives the 3D monolith's rotation across the whole page (0 → 1).
+  useSmoothScroll();
+  // Drives the slow rotation of the marble bust across the whole page.
   const { scrollYProgress } = useScroll();
 
   return (
-    <div className="grain vignette relative min-h-screen bg-ink text-bone selection:bg-blood">
-      {/* film title-card on load */}
+    <div className="grain vignette relative min-h-screen bg-ink text-bone">
       <CinematicIntro />
-
-      {/* custom art cursor */}
       <Cursor />
 
-      {/* living 3D backdrop — rotating marble specimens */}
-      <StatueScene scroll={scrollYProgress} />
+      {/* living backdrop — the rotating marble bust */}
+      <BustScene scroll={scrollYProgress} />
 
-      {/* global cinematic grade, leak, scanlines, letterbox + HUD */}
+      {/* restrained cinematic grade */}
       <CinematicOverlay />
 
       <Navbar />
 
       <main className="relative">
         <Hero />
-        <Marquee />
         <Manifesto />
         <Gallery />
         <Studio />

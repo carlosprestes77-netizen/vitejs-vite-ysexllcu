@@ -53,13 +53,13 @@ export default function Cursor() {
         ref={ring}
         className="pointer-events-none fixed left-0 top-0 z-[9999] -ml-5 -mt-5 h-10 w-10 rounded-full border transition-[width,height,margin,border-color,background-color] duration-300 ease-out"
         style={{
-          borderColor: hovering ? '#c1121f' : '#c8a45c',
-          width: hovering ? 64 : 40,
-          height: hovering ? 64 : 40,
-          marginLeft: hovering ? -32 : -20,
-          marginTop: hovering ? -32 : -20,
+          borderColor: hovering ? '#b08d57' : '#8a8276',
+          width: hovering ? 64 : 36,
+          height: hovering ? 64 : 36,
+          marginLeft: hovering ? -32 : -18,
+          marginTop: hovering ? -32 : -18,
           mixBlendMode: 'difference',
-          backgroundColor: hovering ? 'rgba(193,18,31,0.08)' : 'transparent',
+          backgroundColor: hovering ? 'rgba(176,141,87,0.08)' : 'transparent',
         }}
       />
       <div

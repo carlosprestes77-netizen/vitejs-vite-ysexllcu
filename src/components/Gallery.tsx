@@ -1,83 +1,48 @@
 import Reveal from './Reveal';
+import MaskText from './MaskText';
 
-type Item = {
-  id: number;
-  title: string;
-  tag: string;
-  span: string; // grid span classes for an editorial mosaic
-  hue: string; // placeholder gradient until real photos land
-  src?: string;
-};
+type Item = { id: number; title: string; tag: string; span: string; hue: string; src?: string };
 
-/** Drop real photo URLs into `src` when they arrive — the cinematic
- *  grade is applied globally, so every image inherits the film look. */
+/** Drop real photo URLs into `src` when they arrive. */
 const ITEMS: Item[] = [
-  { id: 1, title: 'Serpente Ornamental', tag: 'Blackwork', span: 'sm:col-span-2 sm:row-span-2', hue: 'from-[#1a1320] to-[#0a0a0b]' },
-  { id: 2, title: 'Mão de Fátima', tag: 'Fine Line', span: '', hue: 'from-[#201a13] to-[#0a0a0b]' },
-  { id: 3, title: 'Geometria Sagrada', tag: 'Dotwork', span: '', hue: 'from-[#13201a] to-[#0a0a0b]' },
-  { id: 4, title: 'Caveira Barroca', tag: 'Realismo', span: 'sm:row-span-2', hue: 'from-[#1a1313] to-[#0a0a0b]' },
-  { id: 5, title: 'Fênix', tag: 'Neotrad', span: 'sm:col-span-2', hue: 'from-[#1d1813] to-[#0a0a0b]' },
-  { id: 6, title: 'Lua & Maré', tag: 'Ornamental', span: '', hue: 'from-[#131820] to-[#0a0a0b]' },
-  { id: 7, title: 'Adaga', tag: 'Traditional', span: '', hue: 'from-[#201320] to-[#0a0a0b]' },
+  { id: 1, title: 'Serpente', tag: 'Blackwork', span: 'sm:col-span-2 sm:row-span-2', hue: 'from-[#15131a] to-[#0a0908]' },
+  { id: 2, title: 'Laurel', tag: 'Fine line', span: '', hue: 'from-[#17150f] to-[#0a0908]' },
+  { id: 3, title: 'Meandro', tag: 'Geométrico', span: '', hue: 'from-[#101512] to-[#0a0908]' },
+  { id: 4, title: 'Perfil', tag: 'Figurativo', span: 'sm:row-span-2', hue: 'from-[#151010] to-[#0a0908]' },
+  { id: 5, title: 'Vênus', tag: 'Ornamental', span: 'sm:col-span-2', hue: 'from-[#16130d] to-[#0a0908]' },
 ];
 
 export default function Gallery() {
   return (
-    <section
-      id="galeria"
-      className="relative z-10 mx-auto max-w-7xl px-6 py-28 lg:px-10"
-    >
-      <Reveal>
-        <div className="mb-12 flex items-end justify-between">
-          <div>
-            <p className="font-mono text-[11px] uppercase tracking-[0.4em] text-blood">
-              ⊹ Nº 02 · Portfólio
-            </p>
-            <h2 className="mt-4 font-display text-5xl font-black leading-none text-bone sm:text-7xl">
-              Galeria <span className="italic text-stroke-gold">viva</span>
-            </h2>
-          </div>
-          <p className="hidden max-w-xs text-right text-sm font-light text-bone-dim md:block">
-            Cada peça é um quadro. As fotos reais do trabalho entram aqui — já
-            com a mesma textura de cinema do site.
+    <section id="galeria" className="relative z-10 mx-auto max-w-6xl px-6 py-32">
+      <div className="mb-14 flex items-end justify-between">
+        <MaskText className="font-display text-4xl font-light italic text-bone sm:text-6xl">
+          Obra
+        </MaskText>
+        <Reveal>
+          <p className="font-mono text-[10px] uppercase tracking-[0.5em] text-gold/70">
+            ii — galeria
           </p>
-        </div>
-      </Reveal>
+        </Reveal>
+      </div>
 
-      <div className="grid auto-rows-[220px] grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+      <div className="grid auto-rows-[230px] grid-cols-2 gap-2 sm:grid-cols-3 md:gap-3">
         {ITEMS.map((it, i) => (
-          <Reveal key={it.id} delay={(i % 4) * 0.08} className={it.span}>
-            <figure className="group relative h-full w-full overflow-hidden border border-bone/10">
+          <Reveal key={it.id} delay={(i % 3) * 0.1} className={it.span}>
+            <figure className="group relative h-full w-full overflow-hidden">
               {it.src ? (
                 <img
                   src={it.src}
                   alt={it.title}
-                  className="h-full w-full object-cover grayscale-[0.15] transition-transform duration-700 group-hover:scale-105"
+                  className="h-full w-full object-cover grayscale-[0.2] transition-transform duration-[1200ms] ease-out group-hover:scale-105"
                 />
               ) : (
-                <div
-                  className={`flex h-full w-full items-center justify-center bg-gradient-to-br ${it.hue} transition-transform duration-700 group-hover:scale-105`}
-                >
-                  <span className="font-gothic text-5xl text-bone/10">
-                    {String(it.id).padStart(2, '0')}
-                  </span>
-                </div>
+                <div className={`h-full w-full bg-gradient-to-br ${it.hue} transition-transform duration-[1200ms] ease-out group-hover:scale-105`} />
               )}
-
-              <figcaption className="absolute inset-x-0 bottom-0 translate-y-2 bg-gradient-to-t from-ink to-transparent p-4 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-gold">
-                  {it.tag}
-                </p>
-                <p className="font-display text-lg font-semibold text-bone">
-                  {it.title}
-                </p>
+              <figcaption className="absolute inset-x-0 bottom-0 flex items-end justify-between p-5 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                <span className="font-display text-lg italic text-bone">{it.title}</span>
+                <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-gold">{it.tag}</span>
               </figcaption>
-
-              {!it.src && (
-                <span className="absolute right-3 top-3 font-mono text-[8px] uppercase tracking-[0.2em] text-bone-faint">
-                  [ foto em breve ]
-                </span>
-              )}
             </figure>
           </Reveal>
         ))}
