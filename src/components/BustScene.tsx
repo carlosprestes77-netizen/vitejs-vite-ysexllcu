@@ -400,7 +400,9 @@ function Rig() {
     const t = state.clock.elapsedTime;
     state.camera.position.x = Math.sin(t * 0.11) * 0.28;
     state.camera.position.z = 7 + Math.sin(t * 0.15) * 0.18;
-    state.camera.lookAt(0, 0.4, 0); // focus slightly above origin — centers the head
+    // Look slightly below origin → bust head appears in the upper 1/3 of the viewport,
+    // matching the Monolith Studio composition (3D in upper half, title below).
+    state.camera.lookAt(0, -0.35, 0);
   });
   return null;
 }
@@ -410,6 +412,8 @@ export default function BustScene({ scroll }: { scroll: MotionValue<number> }) {
   const pointer = usePointer();
   return (
     <div className="fixed inset-0 z-0 pointer-events-none">
+      {/* Gradient that fades the bust's chest/base into darkness — Monolith effect */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[45%] bg-gradient-to-t from-[#070609] via-[#070609]/55 to-transparent" />
       <Canvas
         dpr={[1, 2]}
         shadows
@@ -417,7 +421,7 @@ export default function BustScene({ scroll }: { scroll: MotionValue<number> }) {
         gl={{ antialias: true, alpha: true }}
       >
         <color attach="background" args={['#070609']} />
-        <fog attach="fog" args={['#070609', 12, 32]} />
+        <fog attach="fog" args={['#070609', 8, 22]} />
 
         {/* Lighting — warm orbiting key + cool ambient fill + amber underlighting */}
         <ambientLight intensity={0.30} color="#c8d4e8" />
