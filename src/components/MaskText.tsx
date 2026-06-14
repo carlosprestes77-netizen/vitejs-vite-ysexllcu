@@ -1,21 +1,22 @@
 import { motion } from 'framer-motion';
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 
-/** A line of type that rises from behind a mask edge as it enters view —
- *  the signature "editorial" reveal of award-winning sites. */
 export default function MaskText({
   children,
   className = '',
   delay = 0,
+  style,
 }: {
   children: ReactNode;
   className?: string;
   delay?: number;
+  style?: CSSProperties;
 }) {
   return (
-    <span className="block overflow-hidden pb-[0.12em]">
+    <span className="block overflow-hidden pb-[0.08em]">
       <motion.span
         className={`block ${className}`}
+        style={style}
         initial={{ y: '115%' }}
         whileInView={{ y: '0%' }}
         viewport={{ once: true, margin: '-12%' }}
