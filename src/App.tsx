@@ -6,6 +6,7 @@ import CinematicIntro from './components/CinematicIntro';
 import Cursor from './components/Cursor';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import MarqueeStrip from './components/MarqueeStrip';
 import Manifesto from './components/Manifesto';
 import Gallery from './components/Gallery';
 import Studio from './components/Studio';
@@ -33,8 +34,10 @@ export default function App() {
 
       <main className="relative">
         <Hero />
+        <MarqueeStrip />
         <Manifesto />
         <Gallery />
+        <MarqueeStrip />
         <Studio />
         <Artist />
         <Contact />
