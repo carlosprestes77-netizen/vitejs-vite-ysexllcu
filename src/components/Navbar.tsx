@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 const LINKS = [
   { id: 'manifesto', label: 'Manifesto' },
+  { id: 'tecnica', label: 'Técnica' },
   { id: 'galeria', label: 'Galeria' },
   { id: 'estudio', label: 'Estúdio' },
   { id: 'artista', label: 'Artista' },

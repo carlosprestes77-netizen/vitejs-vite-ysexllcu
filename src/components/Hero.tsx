@@ -1,65 +1,107 @@
 import { motion } from 'framer-motion';
+import SacredGeometry from './art/SacredGeometry';
+import Constellation from './art/Constellation';
+import Meander from './art/Meander';
 
 export default function Hero() {
   return (
     <section
       id="topo"
-      className="relative z-10 flex min-h-screen flex-col justify-between px-7 pt-9 pb-10 sm:px-12 sm:pt-12 sm:pb-14"
+      className="relative z-10 flex min-h-screen flex-col justify-between overflow-hidden px-7 pb-8 pt-24 sm:px-12 sm:pb-12 sm:pt-28"
     >
-      {/* ── Top row: editorial corner labels ─────────────────────────── */}
-      <div className="flex w-full items-start justify-between">
-        <motion.p
-          initial={{ opacity: 0, y: -12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.35, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="font-mono text-[9px] uppercase tracking-[0.5em] text-gold/75"
-        >
-          Atelier de tatuagem
-        </motion.p>
+      {/* ── Sacred-geometry halo, framing the marble bust behind it ──────── */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 flex items-start justify-center"
+      >
+        <div className="relative mt-[11vh] aspect-square w-[min(94vw,640px)]">
+          <div className="absolute inset-0 animate-spin-slow">
+            <SacredGeometry stroke="#b08d57" opacity={0.34} className="h-full w-full" />
+          </div>
+          <div className="absolute inset-[19%] animate-spin-rev">
+            <SacredGeometry
+              stroke="#efe9dd"
+              opacity={0.16}
+              baseDelay={0.3}
+              className="h-full w-full"
+            />
+          </div>
+        </div>
+      </div>
 
+      {/* ── Constellation accent ─────────────────────────────────────────── */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute right-[5%] top-[15%] hidden w-[240px] animate-float-slow opacity-60 sm:block"
+      >
+        <Constellation className="h-auto w-full" />
+      </div>
+
+      {/* ── Top corner labels ────────────────────────────────────────────── */}
+      <div className="relative flex w-full items-start justify-between">
         <motion.p
           initial={{ opacity: 0, y: -12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.35, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="font-mono text-[9px] uppercase tracking-[0.5em] text-bone/30"
+          transition={{ delay: 0.4, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="font-mono text-[9px] uppercase tracking-[0.45em] text-gold/75"
+        >
+          Linha · Ponto · Permanência
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: -12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="font-mono text-[9px] uppercase tracking-[0.45em] text-bone/30"
         >
           Est.&nbsp;MMXXIV
         </motion.p>
       </div>
 
-      {/* ── Bottom section: enormous title + footer row ───────────────── */}
-      <div>
-        {/* Mask-reveal on the wordmark — slides up from below */}
+      {/* ── Bottom block: Greek line, wordmark, tagline, meander ─────────── */}
+      <div className="relative">
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 1.4 }}
+          className="mb-3 font-sans text-[11px] uppercase tracking-[0.55em] text-bone/40"
+        >
+          ΤΕΧΝΗ&nbsp;ΑΘΑΝΑΤΟΣ — arte imortal
+        </motion.p>
+
         <div className="overflow-hidden">
           <motion.h1
-            initial={{ y: '108%' }}
+            initial={{ y: '110%' }}
             animate={{ y: '0%' }}
-            transition={{ delay: 0.65, duration: 1.45, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display font-light italic leading-[0.86] tracking-[-0.02em] text-bone"
-            style={{ fontSize: 'clamp(4.2rem, 20vw, 16.5rem)' }}
+            transition={{ delay: 0.6, duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+            className="font-display font-light italic leading-[0.82] tracking-[-0.02em] text-bone"
+            style={{ fontSize: 'clamp(4rem, 19vw, 16rem)' }}
           >
             Obsidian
           </motion.h1>
         </div>
 
-        {/* Footer row: tagline left, scroll line right */}
-        <div className="mt-5 flex items-end justify-between sm:mt-7">
+        <div className="mt-6 flex items-end justify-between gap-6">
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1.55, duration: 1.4 }}
-            className="font-sans text-[11px] font-light leading-[1.75] text-bone/55"
+            transition={{ delay: 1.5, duration: 1.4 }}
+            className="max-w-xs font-sans text-[12px] font-light leading-[1.8] text-bone/55"
           >
-            A pele como mármore.<br />
-            A linha como escultura.
+            A linha é a lei. O ponto é o tempo.
+            <br />
+            Tatuagem neoclássica — fine line &amp; pontilhismo.
           </motion.p>
 
           <motion.span
             initial={{ scaleY: 0 }}
             animate={{ scaleY: 1 }}
             transition={{ delay: 1.8, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="block h-14 w-px origin-top animate-pulse-soft bg-gradient-to-b from-bone/45 to-transparent"
+            className="hidden h-16 w-px origin-top animate-pulse-soft bg-gradient-to-b from-gold/60 to-transparent sm:block"
           />
+        </div>
+
+        <div className="mt-8">
+          <Meander height={16} unit={16} opacity={0.4} idKey="hero" className="w-full" />
         </div>
       </div>
     </section>

@@ -7,44 +7,39 @@ export default function Artist() {
       id="artista"
       className="relative z-10 overflow-hidden px-7 py-36 sm:px-12 lg:py-44"
     >
-      {/* Decorative background numeral */}
       <div
         aria-hidden
         className="pointer-events-none absolute -left-4 top-10 select-none font-display text-[clamp(8rem,30vw,22rem)] font-light italic leading-none text-bone/[0.025]"
       >
-        IV
+        V
       </div>
 
       <div className="mx-auto max-w-6xl">
-        {/* Section label */}
         <Reveal>
-          <p className="mb-16 font-mono text-[9px] uppercase tracking-[0.6em] text-gold/60">
-            iv — o artista
+          <p className="mb-16 font-sans text-[10px] uppercase tracking-[0.55em] text-gold/60">
+            ΤΕΧΝΙΤΗΣ · o artista
           </p>
         </Reveal>
 
-        {/* Quote — full width, front and center */}
         <div className="mb-20">
           <MaskText
             className="font-display font-light leading-[1.0] text-bone"
             style={{ fontSize: 'clamp(2.6rem, 7vw, 5.5rem)' }}
           >
-            "A pele me diz
+            “A pele me diz
           </MaskText>
           <MaskText
             className="font-display font-light italic leading-[1.0] text-bone-dim"
             style={{ fontSize: 'clamp(2.6rem, 7vw, 5.5rem)' }}
             delay={0.08}
           >
-            onde a linha quer ir."
+            onde a linha quer ir.”
           </MaskText>
         </div>
 
-        {/* Grid: portrait + bio */}
         <div className="grid items-start gap-12 lg:grid-cols-[auto_1fr] lg:gap-20">
-          {/* Portrait placeholder */}
           <Reveal delay={0.05}>
-            <div className="aspect-[4/5] w-full max-w-xs overflow-hidden bg-gradient-to-b from-ink-700 to-ink lg:max-w-[320px]">
+            <div className="dots aspect-[4/5] w-full max-w-xs overflow-hidden bg-gradient-to-b from-ink-700 to-ink lg:max-w-[320px]">
               <div className="flex h-full items-center justify-center">
                 <span className="font-mono text-[8px] uppercase tracking-[0.5em] text-bone/10">
                   Retrato em breve
@@ -53,7 +48,6 @@ export default function Artist() {
             </div>
           </Reveal>
 
-          {/* Bio */}
           <div className="lg:pt-4">
             <Reveal>
               <h3 className="font-display text-3xl font-light italic text-bone">
@@ -65,28 +59,18 @@ export default function Artist() {
                 Fundador · Tatuador Chefe
               </p>
             </Reveal>
-
             <Reveal delay={0.1}>
-              <div className="mt-8 w-px h-px" /> {/* spacer */}
-              <p className="mt-0 max-w-sm text-[13px] font-light leading-[1.9] text-bone-faint">
-                Espaço reservado para a biografia, formação e filosofia do artista.
-                Uma narrativa que conecta a trajetória pessoal com o compromisso
-                com a arte permanente — aquela que resiste ao tempo tanto quanto
-                à tendência.
+              <p className="mt-8 max-w-sm text-[13px] font-light leading-[1.9] text-bone-faint">
+                Espaço reservado para a biografia, formação e filosofia do artista
+                — uma trajetória dedicada à linha precisa e ao ponto paciente.
+                Arte permanente que resiste ao tempo tanto quanto à tendência.
               </p>
             </Reveal>
-
             <Reveal delay={0.14}>
               <div className="mt-10 flex flex-wrap gap-7 font-mono text-[9px] uppercase tracking-[0.4em] text-bone-faint">
-                <a href="#" className="transition-colors hover:text-gold">
-                  Instagram
-                </a>
-                <a href="#" className="transition-colors hover:text-gold">
-                  Behance
-                </a>
-                <a href="#" className="transition-colors hover:text-gold">
-                  WhatsApp
-                </a>
+                <a href="#" className="transition-colors hover:text-gold">Instagram</a>
+                <a href="#" className="transition-colors hover:text-gold">Behance</a>
+                <a href="#" className="transition-colors hover:text-gold">WhatsApp</a>
               </div>
             </Reveal>
           </div>

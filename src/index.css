@@ -184,4 +184,26 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  /* Subtle dotwork (pontilhismo) texture for gallery-wall backgrounds */
+  .dots {
+    background-image: radial-gradient(
+      rgba(239, 233, 221, 0.05) 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+  }
+  .dots-dense {
+    background-image: radial-gradient(
+      rgba(239, 233, 221, 0.06) 1px,
+      transparent 1px
+    );
+    background-size: 13px 13px;
+  }
+
+  /* Fade an element's edges to nothing — for framing artwork */
+  .mask-fade {
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 55%, transparent 85%);
+    mask-image: radial-gradient(ellipse at center, #000 55%, transparent 85%);
+  }
 }
