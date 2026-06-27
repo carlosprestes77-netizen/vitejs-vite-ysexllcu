@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Reveal from './Reveal';
 import MaskText from './MaskText';
+import SacredGeometry from './art/SacredGeometry';
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
@@ -9,19 +10,22 @@ export default function Contact() {
     'w-full border-b border-bone/12 bg-transparent py-4 font-sans text-[13px] text-bone placeholder:text-bone-faint focus:border-gold focus:outline-none transition-colors';
 
   return (
-    <section
-      id="agendar"
-      className="relative z-10 px-7 py-40 sm:px-12 lg:py-48"
-    >
-      <div className="mx-auto max-w-lg">
-        {/* Section label */}
+    <section id="agendar" className="relative z-10 overflow-hidden px-7 py-40 sm:px-12 lg:py-48">
+      {/* faint geometry accent */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-24 top-1/2 hidden w-[420px] -translate-y-1/2 opacity-[0.07] lg:block"
+      >
+        <SacredGeometry stroke="#efe9dd" opacity={1} className="h-full w-full" />
+      </div>
+
+      <div className="relative mx-auto max-w-lg">
         <Reveal>
-          <p className="mb-14 font-mono text-[9px] uppercase tracking-[0.6em] text-gold/60">
-            v — reserva
+          <p className="mb-14 font-sans text-[10px] uppercase tracking-[0.55em] text-gold/60">
+            ΚΛΗΣΙΣ · reserva
           </p>
         </Reveal>
 
-        {/* Split title reveal */}
         <div className="mb-16">
           <MaskText
             className="font-display font-light leading-[0.92] text-bone"
@@ -58,7 +62,7 @@ export default function Contact() {
               <textarea
                 rows={3}
                 className={`${field} resize-none`}
-                placeholder="Sua ideia — sem filtros"
+                placeholder="Sua ideia — linha, ponto, referências"
               />
               <div className="pt-3">
                 <button

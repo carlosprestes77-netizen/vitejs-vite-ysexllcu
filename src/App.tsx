@@ -6,8 +6,9 @@ import CinematicIntro from './components/CinematicIntro';
 import Cursor from './components/Cursor';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import MarqueeStrip from './components/MarqueeStrip';
+import Divider from './components/Divider';
 import Manifesto from './components/Manifesto';
+import Technique from './components/Technique';
 import Gallery from './components/Gallery';
 import Studio from './components/Studio';
 import Artist from './components/Artist';
@@ -34,12 +35,14 @@ export default function App() {
 
       <main className="relative">
         <Hero />
-        <MarqueeStrip />
+        <Divider label="ΟΒΣΙΔΙΑΝ · linha & ponto" idKey="a" />
         <Manifesto />
+        <Technique />
+        <Divider idKey="b" />
         <Gallery />
-        <MarqueeStrip />
         <Studio />
         <Artist />
+        <Divider label="ΑΘΑΝΑΤΟΣ · arte imortal" idKey="c" />
         <Contact />
         <Footer />
       </main>

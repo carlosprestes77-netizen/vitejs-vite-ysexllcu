@@ -13,41 +13,37 @@ export default function Studio() {
       id="estudio"
       className="relative z-10 overflow-hidden px-7 py-36 sm:px-12 lg:py-44"
     >
-      {/* Decorative background numeral */}
       <div
         aria-hidden
         className="pointer-events-none absolute right-6 top-10 select-none font-display text-[clamp(8rem,30vw,22rem)] font-light italic leading-none text-bone/[0.025] sm:right-16"
       >
-        III
+        IV
       </div>
 
       <div className="mx-auto max-w-6xl">
-        {/* Section label */}
         <Reveal>
-          <p className="mb-16 font-mono text-[9px] uppercase tracking-[0.6em] text-gold/60">
-            iii — o espaço
+          <p className="mb-16 font-sans text-[10px] uppercase tracking-[0.55em] text-gold/60">
+            ΝΑΟΣ · o espaço
           </p>
         </Reveal>
 
         <div className="grid items-start gap-16 lg:grid-cols-[1fr_1.05fr] lg:gap-28">
-          {/* Text side */}
           <div>
             <MaskText
               className="font-display font-light leading-[1.05] text-bone"
               style={{ fontSize: 'clamp(2.4rem, 6vw, 4.2rem)' }}
             >
-              Um espaço <span className="italic text-bone-dim">como galeria</span>
+              Um espaço <span className="italic text-bone-dim">como templo</span>
             </MaskText>
 
             <Reveal delay={0.1}>
               <p className="mt-8 max-w-sm text-[13px] font-light leading-[1.9] text-bone-faint">
                 Luz baixa. Concreto bruto. Som de vinil. O estúdio foi concebido
-                como extensão da filosofia do trabalho — um espaço onde a atenção
+                como extensão da filosofia do trabalho — um lugar onde a atenção
                 é total e o tempo não tem pressa.
               </p>
             </Reveal>
 
-            {/* Metrics */}
             <Reveal delay={0.15}>
               <div className="mt-14 grid grid-cols-3 gap-6 border-t border-bone/10 pt-8">
                 {METRICS.map((m) => (
@@ -64,17 +60,14 @@ export default function Studio() {
             </Reveal>
           </div>
 
-          {/* Image placeholder side */}
           <Reveal delay={0.12} className="relative">
-            <div className="aspect-[4/3] w-full overflow-hidden bg-gradient-to-br from-ink-700 to-ink">
+            <div className="dots aspect-[4/3] w-full overflow-hidden bg-gradient-to-br from-ink-700 to-ink">
               <div className="flex h-full items-center justify-center">
                 <span className="font-mono text-[8px] uppercase tracking-[0.5em] text-bone/10">
                   Fotos do espaço em breve
                 </span>
               </div>
             </div>
-
-            {/* Offset accent block */}
             <div className="absolute -bottom-5 -right-5 h-24 w-24 border border-gold/15" />
           </Reveal>
         </div>
